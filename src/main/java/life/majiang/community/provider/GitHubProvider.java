@@ -36,7 +36,7 @@ public class GitHubProvider {
         try {
             Response response = client.newCall(request).execute();
             String string = response.body().string();
-            GithubUser githubUser = JSON.parseObject(string, GithubUser.class);//String的JSON对象自动的解析成Java的类对象，不用自己一点一点去解析String
+            GithubUser githubUser = JSON.parseObject(string, GithubUser.class);//String的JSON对象自动的解析成Java的类对象，不用自己一点一点去解析String//这是fastJSON
             return githubUser;
         } catch (IOException e) {
         }
